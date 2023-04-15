@@ -1,0 +1,245 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(90deg,#fff,#fff,#fff,#cacaca);
+}
+
+.st {
+    height: 8px;
+    width: 100%;
+    background: linear-gradient(160deg,yellow,yellow,orange,rgb(171, 7, 236),rgb(171, 7, 236),rgb(171, 7, 236));
+}
+.footer {
+    text-align: center;
+
+}
+p {
+    margin: 1rem 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ul {
+    padding-left: 0;
+}
+ul li {
+    list-style-type: none;
+    margin: 0 10px 0 0;
+}
+.header {
+    padding: 10px 20px;
+    margin-bottom: 1.5rem;
+    padding-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+.lefthead {
+    display: flex;
+    justify-content: space-between;
+}
+.brand-name {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5em;
+    font-weight: 900;
+}
+.navig {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.2rem;
+    padding: 0;
+    
+}
+.navig li {
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+}
+.navig li:hover {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+.righthead {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.socials ul {
+    display: flex;
+}
+.socials li {
+    margin-right: 20px;
+}
+.createbtn .btn {
+    border-radius: 5px;
+}
+
+
+/* card*/
+.card {
+    margin: 1rem;
+    background: linear-gradient(90deg,#fff,#fff,#fff,#cacaca);;
+    border-radius: 5px;
+}
+.card a img {
+    padding: 0;
+    margin: 0;
+}
+/*  individual col cards */
+.card-col {
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    
+}
+.card-col .picture {
+   width: 360px;
+   height: 280px;
+   object-fit: cover;
+   object-position: left;
+   margin-bottom: 0rem;
+}
+.card-tiny {
+    display: flex;
+    margin-bottom: 0.5rem;
+    text-transform: capitalize;
+}
+.card-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    text-transform: capitalize;
+}
+.discription {
+    margin-bottom: 0.5rem;
+    text-transform: capitalize;
+    font-size: 0.9rem;
+}
+.card-tags {
+    margin-bottom: 1rem;
+    display: flex;
+}
+/* */
+.card-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    height: 175px;
+}
+.card-row .picture {
+    width: 270px;
+    height: 175px;
+    object-fit: cover;
+    object-position: left;
+    margin-right: 1rem;
+ }
+/* tag btns*/
+.tags {
+    display: flex;
+    margin-top: 10px;
+}
+.card-btns {
+    font-size: 0.6rem;
+    border-radius: 20px;
+    border: 1px solid #000;
+    padding: 5px 10px;
+    margin: 0 5px 0 0;
+    text-transform: capitalize;
+    width: fit-content;
+}
+
+/* buttons */
+.btn {
+    padding: 4px 11px;
+    border-radius: 5px;
+    font-size: 0.97em;
+    text-transform: capitalize;
+    cursor: pointer;
+    margin: 1rem 0;
+}
+.btn-def {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    
+}
+.btn-def:hover {
+    background-color: #272727;
+    color: #fff;
+}
+.btn-outline {
+    background: none;
+    border: 1px solid #000;
+    color: #000;
+}
+.btn-outline:hover {
+    background: #000;
+    color: #fff;
+}
+.btn-light-outline {
+    border: 1.5px solid #7e7e7e;
+    color: #000;
+}
+/* display */
+.display {
+    font-size: 2.2rem;
+    font-weight: 500;
+}
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.text {
+    padding: 20px;
+    padding-top: 0;
+}
+/* custom */
+.hero {
+    text-align: center;
+    margin: 2rem 0;
+}
+.articles {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+}
+.sm {
+    scale: 0.8;
+    padding: 0;
+    margin: 0;
+}
+.ro {
+    padding: 0;
+    text-align: left;
+}
+.bg {
+    scale: 1.3;
+}
+
+/**/
+.create_post {
+    width: 80%;
+    margin: 0 auto;
+}
+.create_post p {
+    display: flex;
+    flex-direction: column;
+}
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+}
+.tags p {
+    cursor: pointer;
+}
+.my {
+    margin: 0.5em 5px;
+}
+.tag-box {
+    border: 1px solid #000;
+    min-height: 40px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.tag-box p {
+    cursor: pointer;
+}

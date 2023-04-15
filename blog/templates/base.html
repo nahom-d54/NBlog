@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% comment %} <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> {% endcomment %}
+</head>
+<body>
+    <div class="st"></div>
+    <header class="header">
+        <div class="lefthead">
+            <h1 class="brand-name"><a href="/"> Nahom'S Blog</a></h1>
+            <nav>
+                <ul class="navig">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Solutions</a></li>
+                    <li><a href="#">Resourses</a></li>
+                    &nbsp;
+                    |
+                    &nbsp;
+                    <li><div class="login-out">
+                        {% if user.is_authenticated %}
+                            <a class="logout btn btn-outline" href="{% url 'logout' %}">Logout</a>
+                        {% else %}
+                            <a href="{% url 'sign_in' %}" class="login btn btn-outline">Login</a>
+                        {% endif %}
+                    </div></li>
+                    <li>{% if user.is_authenticated %}
+                            <a class="btn btn-outline" href="{% url 'create_post' %}">Create</a>
+                    {% endif %}</li>
+                    
+                </ul>
+            </nav>
+
+            {% comment %} <div class="righthead">
+                <div class="socials">
+                    <ul>
+                        <li><i class="fab fa-facebook-f"></i></li>
+                        <li><i class="fab fa-instagram"></i></li>
+                        <li><i class="fab fa-twitter"></i></li>
+                    </ul>
+                </div>
+                
+            </div> {% endcomment %}
+            
+        </div>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <script src="{% static 'Js/main.js' %}"></script>
+    <footer class="footer">
+        <p>&copy; {{ year }} Nahom's Blog</p>
+    </footer>
+</body>
+</html>

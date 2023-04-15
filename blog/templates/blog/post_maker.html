@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+    <form method="post" enctype="multipart/form-data" class="create_post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="tag-box" id="tag_box"></div>
+        <div class="tags">
+            {% for t in tags %}
+                <p onClick="addTag({{ t.id }},'{{ t.name }}')" class="card-btns my" id="tag_{{t.id}}">{{ t.name }}</p>
+            {% endfor %}
+        </div>
+        <button type="submit">Post</button>
+    </form>
+{% endblock %}

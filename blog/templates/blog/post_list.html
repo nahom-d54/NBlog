@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    
+
+</style>
+
+<div class="container">
+    <div class="hero">
+        <p class="display">Inside Design: stories and interviews</p>
+        <p>Subscribe to learn about new product features</p>
+        <button class="btn btn-def bg">Subscribe</button>
+    </div>
+    
+    {% load static %}
+    <h3>Latest Articles</h3>
+    <div class="articles">
+        <div class="pick card card-col">
+            {% if latest.0.image %}
+                <img src="{{ latest.0.image.url }}" alt="" class="picture">
+            {% else %}
+            <img src="{% static 'img/default-img.gif' %}" alt="" class="picture">
+            {% endif %}
+
+            <div class="text">
+                <p class="card-tiny">{{ latest.0.author }} . {{ latest.0.date_published }}</p>
+                <h2 class="card-title">{{ latest.0.title }}</h2>
+                <p class="discription">{{ latest.0.introduction }}</p>
+                <ul class="tags">
+                    {% for tag in latest.0.tags.all %}
+                        <li class="card-btns">{{ tag }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+        </div>
+        <ul>
+            {% for post in latest %}
+                {% if forloop.counter == 0 %} 
+                    <!-- Skip the first iteration -->
+                {% else %}
+                <li class="card card-row">
+                    <a href="{% url 'post_detail' pk=post.pk %}" class='lnk-wrapper'>
+                        {% if post.image %}
+                            <img src="{{ post.image.url }}" alt="" class="picture">
+                        {% else %}
+                            <img src="{% static 'img/default-img.gif' %}" alt="" class="picture">
+                        {% endif %}
+                    </a>
+                    <div class="text ro">
+                        <p class="card-tiny sm">{{ post.author }} . {{ post.date_published }}</p>
+                        <h2 class="card-title sm">{{ post.title }}</h2>
+                        <p class="discription sm">{{ post.introduction}}</p>
+                        <ul class="tags sm">
+                            {% for tag in post.tags.all %}
+                                <li class="card-btns">{{ tag }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </li>
+
+                {% endif %}
+                
+            {% endfor %}
+        </ul>    
+    </div>
+</div>
+
+{% endblock %}
